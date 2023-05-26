@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  # creates session
+  post "/sessions" => "sessions#create"
+
+  #creates new user
   post "/users" => "users#create"
 end
