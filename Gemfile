@@ -2,8 +2,13 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.3"
+
 gem "jwt"
+
 gem "rack-cors"
+
+gem "http"
+
 gem "geocoder"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
