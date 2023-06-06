@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2ODYwNzc1NTJ9.mXGOcETfbOBXNZxS39yYzwWBvt8LBMZG9sebF0yumZA
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2ODYwOTg3MzF9.axLXLBfX-v15xLV-x4Qe3yDS46tVaiHl_JRdnwx_rKo
 
 ### Session Create
 POST http://localhost:3000/sessions.json
@@ -21,3 +21,8 @@ Authorization: Bearer {{jwt}}
   "password": "password",
   "password_confirmation": "password"
 }
+
+### User Show
+GET http://localhost:3000/users/1.json
+Content-Type: application/json
+Authorization: Bearer {{jwt}}

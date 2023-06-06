@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   # creates session
-  post "/sessions" => "sessions#create"
+  resources :sessions
 
   #creates new user
-  post "/users" => "users#create"
+  resources :users
 end
