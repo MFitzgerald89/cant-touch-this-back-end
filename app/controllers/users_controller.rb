@@ -6,7 +6,8 @@ class UsersController < ApplicationController
       last_name: params[:last_name],
       email: params[:email],
       password: params[:password],
-      password_confirmation: params[:password_confirmation]
+      password_confirmation: params[:password_confirmation], city: params[:city],
+      state: params[:state]
     )
 
     if @user.save
@@ -38,7 +39,9 @@ class UsersController < ApplicationController
       @user.update(
         first_name: params[:first_name] || @user.first_name,
         last_name: params[:last_name] || @user.last_name,
-        email: params[:email] || @user.email
+        email: params[:email] || @user.email,
+        city: params[:city] || @user.city,
+        state: params[:state] || @user.state
       )
       render json: @user, status: 200
     

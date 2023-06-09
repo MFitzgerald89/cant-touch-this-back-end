@@ -2,25 +2,25 @@ class CarWashesController < ApplicationController
 
   before_action :authenticate_user
 
-  # show all touch free carwashes based on user coordinates
+  # show all coffee shops based on user coordinates
   def index
     lat = current_user.latitude
     lon = current_user.longitude
-    response = HTTP.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=carwash&location=#{lat},#{lon}&radius=10000&region=us&type=car_wash&key=#{Rails.application.credentials.google_apiAIzaSyD-qn7uhqhlLTzz-BUXeP3aOE5aPdpQ-rM}")
+    response = HTTP.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=carwash&location=#{lat},#{lon}&radius=10000&region=us&type=car_wash&key=#{Rails.application.credentials.google_maps_api_key}")
     data = response.parse(:json)
     data = data["results"]
-    carwashes = [""]
-    data = data.delete_if { |x| chains.include? x["name"] }
-    @coffee_shops = data
-    render json: @coffee_shops
+    bad_wash = ["Brushless, Brush-less, Brush Less, Brush-Less, SoftTouch, Softtouch, Soft Touch, Soft-Touch, Touch, Self-Service, Self Service, Self-Serve, Self Serve"]
+    data = data.delete_if { |x| bad_wash.include? x["name"] }
+    @car_washes = data
+    render json: @car_washes
   end
 
-  # show a specific coffee shop
+  # show a specific car wash
   def show
     id = params[:id]
-    response = HTTP.get("https://maps.googleapis.com/maps/api/place/details/json?&place_id=#{id}&fields=name,formatted_address,opening_hours,formatted_phone_number,rating,website,photos,reviews&key=#{Rails.application.credentials.google_api[:api_key]}")
-    @coffee_shop = response.parse(:json)
-    render json: @coffee_shop
+    response = HTTP.get("https://maps.googleapis.com/maps/api/place/details/json?&place_id=#{id}&fields=name,formatted_address,opening_hours,formatted_phone_number,rating,website,photos,reviews&key=#{Rails.application.credentials.google_maps_api_key}")
+    @car_wash = response.parse(:json)
+    render json: @car_wash
   end
-
+  
 end

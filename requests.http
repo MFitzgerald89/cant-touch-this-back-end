@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2ODYwOTg3MzF9.axLXLBfX-v15xLV-x4Qe3yDS46tVaiHl_JRdnwx_rKo
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2ODY0Mzg5NjV9.KPwj5goJ8xBHyjzm3x88CFNEL7cf8_zQCbcLl4kKLMc
 
 ### Session Create
 POST http://localhost:3000/sessions.json
@@ -22,7 +22,24 @@ Authorization: Bearer {{jwt}}
   "password_confirmation": "password"
 }
 
+### User Update
+PATCH http://localhost:3000/users/1.json
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "admin": true
+}
+
 ### User Show
 GET http://localhost:3000/users/1.json
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+### CarWash Shops Index
+GET http://localhost:3000/car_washes.json
+Authorization: Bearer {{jwt}}
+
+### CarWash Show
+GET http://localhost:3000/car_washes/ChIJt2vVjrC1RIYRJyZmyVWhU8A.json
 Authorization: Bearer {{jwt}}
