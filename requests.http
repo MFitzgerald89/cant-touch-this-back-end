@@ -28,7 +28,8 @@ Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 {
-  "admin": true
+  "city": "Pittsburgh",
+  "state": "Pennsylvania"
 }
 
 ### User Show
@@ -38,8 +39,10 @@ Authorization: Bearer {{jwt}}
 
 ### CarWash Index
 GET http://localhost:3000/car_washes.json
+Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 ### CarWash Show
 GET http://localhost:3000/car_washes/1.json
+Content-Type: application/json
 Authorization: Bearer {{jwt}}
