@@ -36,10 +36,10 @@ GET http://localhost:3000/users/1.json
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
-### CarWash Shops Index
+### CarWash Index
 GET http://localhost:3000/car_washes.json
 Authorization: Bearer {{jwt}}
 
 ### CarWash Show
-GET http://localhost:3000/car_washes/ChIJt2vVjrC1RIYRJyZmyVWhU8A.json
+GET http://localhost:3000/car_washes/1.json
 Authorization: Bearer {{jwt}}
