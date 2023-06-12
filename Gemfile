@@ -5,7 +5,7 @@ ruby "3.1.3"
 
 gem "jwt"
 
-gem "rack-cors"
+gem 'rack-cors'
 
 gem "http"
 

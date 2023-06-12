@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2ODY2MTYyOTd9.ZVRJtasJeWHTDkWuIQh506kX8NrZ7p_MC4flaXvrK_A
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2ODY2OTI2MDR9.kNyREfZFCoSdHOpENmOyUjQPGg6hIW7Ljms3xsCEaHM
 
 ### Session Create
 POST http://localhost:3000/sessions.json
@@ -33,7 +33,7 @@ Authorization: Bearer {{jwt}}
 }
 
 ### User Show
-GET http://localhost:3000/users/2.json
+GET http://localhost:3000/users/1.json
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
@@ -43,6 +43,6 @@ Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 ### CarWash Show
-GET http://localhost:3000/car_washes/1.json
+GET http://localhost:3000/car_washes/ChIJmcYQGKjxNIgRQ_0dAxm5YAc.json
 Content-Type: application/json
 Authorization: Bearer {{jwt}}

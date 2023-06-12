@@ -9,11 +9,11 @@ class CarWashesController < ApplicationController
     response = HTTP.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=carwash&location=#{lat},#{lon}&radius=10000&region=us&type=car_wash&key=#{Rails.application.credentials.google_maps_api_key}")
     data = response.parse(:json)
     data = data["results"]
-    excluded_keywords = ["Mr. Magic", "Brushless", "Brush-less", "Brush Less", "Brush-Less", "SoftTouch", "Softtouch", "Soft Touch", "Soft-Touch", "Touch", "Self-Service", "Self Service", "Self-Serve", "Self Serve"]
+    excluded_keywords = ["Mr. Magic", "Brushless", "Brush-less", "BrushLess", "Brush-Less", "SoftTouch", "Softtouch", "Soft Touch", "Soft-Touch", "Self-Service", "Self Service", "Self-Serve", "Self Serve"]
     @car_washes = data
     @car_washes = @car_washes.reject { |wash| excluded_keywords.any? { |keyword| wash["name"].include?(keyword) } }
 
-    render json: @car_washes.to_json
+    render json: @car_washes
   end
 
   # show a specific car wash
