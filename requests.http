@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2ODY0Mzg5NjV9.KPwj5goJ8xBHyjzm3x88CFNEL7cf8_zQCbcLl4kKLMc
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2ODY2MTYyOTd9.ZVRJtasJeWHTDkWuIQh506kX8NrZ7p_MC4flaXvrK_A
 
 ### Session Create
 POST http://localhost:3000/sessions.json
@@ -23,17 +23,17 @@ Authorization: Bearer {{jwt}}
 }
 
 ### User Update
-PATCH http://localhost:3000/users/1.json
+PATCH http://localhost:3000/users/2.json
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 {
-  "city": "Pittsburgh",
-  "state": "Pennsylvania"
+  "city": "Los Angeles",
+  "state": "California"
 }
 
 ### User Show
-GET http://localhost:3000/users/1.json
+GET http://localhost:3000/users/2.json
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
