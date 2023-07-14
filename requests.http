@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2ODkwMTk2OTF9.YuA54yB57KMInLDdURH6KTZjxKO-tL6X2qMej_bzR-4
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2ODkzNzgyODN9.wJZ5LWM0odtnq1GldX8Qwo4onUiBXT8G_3-EazJnidw
 
 ### Session Create
 POST http://localhost:3000/sessions.json
