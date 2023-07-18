@@ -6,7 +6,14 @@ class CarWashesController < ApplicationController
   def index
     lat = current_user.latitude
     lon = current_user.longitude
-    response = HTTP.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=car_wash&location=#{lat},#{lon}&radius=10000&region=us&type=car_wash&key=#{Rails.application.credentials.google_maps_api_key}")
+    response = HTTP.get("https://maps.googleapis.com/maps/api/place/textsearch/json", params: {
+      query: "car wash",
+      location: "#{lat},#{lon}",
+      radius: 10000,
+      region: "us",
+      type: "car_wash",
+      key: Rails.application.credentials.google_maps_api_key
+    })
     data = response.parse(:json)
     data = data["results"]
     excluded_keywords = ["Mr. Magic", "SoftTouch", "Softtouch", "Soft Touch", "Soft-Touch", "Self-Service", "Self Service", "Self-Serve", "Self Serve"]

@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2ODkwMTk2OTF9.YuA54yB57KMInLDdURH6KTZjxKO-tL6X2qMej_bzR-4
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2ODk3ODg2ODN9.UJulExqbktjHyqZ9z4w4dRDPw26dtnfeLGZ0xPkSuLQ
 
 ### Session Create
 POST http://localhost:3000/sessions.json
@@ -12,7 +12,6 @@ Content-Type: application/json
 ### User Create
 POST http://localhost:3000/users.json
 Content-Type: application/json
-Authorization: Bearer {{jwt}}
 
 {
   "first_name": "Casey",
